@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { authLoginThunk } from "redux/auth/auth.thunk";
-import { selectAuthStatus } from "redux/auth/auth.selector";
-import { toast } from "react-toastify";
-import Loader from "components/Loader/Loader";
+// import { useDispatch, useSelector } from "react-redux";
+// import { authLoginThunk } from "redux/auth/auth.thunk";
+// import { selectAuthStatus } from "redux/auth/auth.selector";
+// import { toast } from "react-toastify";
+// import Loader from "components/Loader/Loader";
 import {
     RegisterGroup,
     RegisterTitle,
@@ -23,8 +23,8 @@ const LoginPage = () => {
     const [values, setValues] = useState(initialState);
     // const [isPassword, setIsPassword] = useState(true);
 
-    const dispatch = useDispatch();
-    const status = useSelector(selectAuthStatus);
+    // const dispatch = useDispatch();
+    // const status = useSelector(selectAuthStatus);
 
     const handleInputChange = (event) => {
         const { name, value } = event.currentTarget;
@@ -34,24 +34,26 @@ const LoginPage = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
+        console.log(values);
+
     // ======
         // setIsLoading(true);
     // ======
 
-        try {
-            await dispatch(authLoginThunk(values)).unwrap();
-            toast.success('Finally! We missed you.');
-        } catch (error) {
-            console.log(error);
-            toast.error('Do not hurry! Something is wrong with your email or password.');
-        }
+        // try {
+        //     await dispatch(authLoginThunk(values)).unwrap();
+        //     toast.success('Finally! We missed you.');
+        // } catch (error) {
+        //     console.log(error);
+        //     toast.error('Do not hurry! Something is wrong with your email or password.');
+        // }
 
         setValues(initialState);
     }
 
     return (
         <RegisterGroup>
-            {status === 'loading' && <Loader />}
+            {/* {status === 'loading' && <Loader />} */}
 
             <RegisterTitle>Please Log in Your Phonebook</RegisterTitle>
 

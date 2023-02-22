@@ -2,7 +2,7 @@ import ContactForm from "components/ContactForm/ContactForm";
 import Filter from "components/Filter/Filter";
 import ContactList from "components/ContactList/ContactList";
 import Loader from "components/Loader/Loader";
-import { selectIsLoading} from "redux/selectors";
+import { selectIsLoading} from "redux/contacts/selectors";
 import { useSelector } from "react-redux";
 import {
     ContactsGroup,
