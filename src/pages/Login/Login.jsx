@@ -1,6 +1,6 @@
 import { useState } from "react";
-// import { useDispatch, useSelector } from "react-redux";
-// import { authLoginThunk } from "redux/auth/auth.thunk";
+import { useDispatch } from "react-redux";
+import { authOperations } from "redux/auth/auth-operations";
 // import { selectAuthStatus } from "redux/auth/auth.selector";
 // import { toast } from "react-toastify";
 // import Loader from "components/Loader/Loader";
@@ -13,32 +13,30 @@ import {
     ButtonAdding,
 } from "./Login.styled";
 
-const initialState = {
-    email: '',
-    password: '',
-}
-
 const LoginPage = () => {
-    // const [isLoading, setIsLoading] = useState(false);
-    const [values, setValues] = useState(initialState);
+    const dispatch = useDispatch();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     // const [isPassword, setIsPassword] = useState(true);
 
-    // const dispatch = useDispatch();
-    // const status = useSelector(selectAuthStatus);
-
-    const handleInputChange = (event) => {
-        const { name, value } = event.currentTarget;
-        setValues(prev => ({...prev, [name]: value}))
+    const handleInputChange = ({ target: { name, value }}) => {
+        switch (name) {
+            case 'email':
+                return setEmail(value);
+            case 'password':
+                return setPassword(value);
+            
+            default:
+                return;
+        }
     }
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
 
-        console.log(values);
+        dispatch(authOperations.logIn({ email, password }));
 
-    // ======
-        // setIsLoading(true);
-    // ======
+        console.log(email, password);
 
         // try {
         //     await dispatch(authLoginThunk(values)).unwrap();
@@ -48,13 +46,12 @@ const LoginPage = () => {
         //     toast.error('Do not hurry! Something is wrong with your email or password.');
         // }
 
-        setValues(initialState);
+        setEmail('');
+        setPassword('');
     }
 
     return (
         <RegisterGroup>
-            {/* {status === 'loading' && <Loader />} */}
-
             <RegisterTitle>Please Log in Your Phonebook</RegisterTitle>
 
             <Form onSubmit={handleSubmit}>
@@ -66,7 +63,7 @@ const LoginPage = () => {
                         required
                         autoComplete="on"
                         placeholder="name@email.com"
-                        value={values.email}
+                        value={email}
                         onChange={handleInputChange}
                     />
                 </LabelField>
@@ -80,7 +77,7 @@ const LoginPage = () => {
                         required
                         autoComplete="off"
                         placeholder="Name123456"
-                        value={values.password}
+                        value={password}
                         onChange={handleInputChange}
                     />
                 </LabelField>

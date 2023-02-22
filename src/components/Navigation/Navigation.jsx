@@ -1,6 +1,6 @@
 // import { useEffect } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { selectAuthToken } from 'redux/auth/auth.selector';
+import { useSelector } from 'react-redux';
+import authSelectors from 'redux/auth/auth-selectors';
 // import { selectProfileToken } from 'redux/auth/profile/profile.selector';
 // import { getProfileThunk } from 'redux/auth/profile/profile.thunk';
 import UserMenu from '../UserMenu/UserMenu';
@@ -10,10 +10,11 @@ import {
 } from './Navigation.styled';
 
 export const Navigation = () => {
+    const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+
     // const dispatch = useDispatch();
 
     // const token = useSelector(selectAuthToken);
-    // const profile = useSelector(selectProfileToken);
 
     // useEffect(() => {
     //     if (token) {
@@ -38,6 +39,7 @@ export const Navigation = () => {
 
     return (
         <HeaderNav>
+            {isLoggedIn ?
                 <>
                     <UserMenu />
                 </> :
@@ -46,6 +48,7 @@ export const Navigation = () => {
                     <NavItem to='/register'>Register</NavItem>
                     <NavItem to='/login'>Log In</NavItem>
                 </>
+            }
         </HeaderNav>
     )
 }

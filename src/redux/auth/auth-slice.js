@@ -13,15 +13,21 @@ const authSlice = createSlice({
     extraReducers: builder => {
         builder
             //Register
-            .addCase(authOperations.register.pending, state => {
-                state.status = 'loading';
-            })
+            // .addCase(authOperations.register.pending, state => {
+            //     state.status = 'loading';
+            // })
             .addCase(authOperations.register.fulfilled, (state, { payload }) => {
-                state.status = 'fulfilled';
-                state.data = payload;
+                state.user = payload.user;
+                state.token = payload.token;
+                state.isLoggedIn = true;
             })
-            .addCase(authOperations.register.rejected, state => {
-                state.status = 'rejected';
+            // .addCase(authOperations.register.rejected, state => {
+            //     state.status = 'rejected';
+            // })
+            .addCase(authOperations.logIn.fulfilled, (state, { payload }) => {
+                state.user = payload.user;
+                state.token = payload.token;
+                state.isLoggedIn = true;
             })
     },
 });

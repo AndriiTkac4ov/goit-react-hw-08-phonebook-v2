@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { authOperations } from "redux/auth/auth-operations";
 // import { authLoginThunk } from "redux/auth/auth.thunk";
 // import { toast } from "react-toastify";
 import {
@@ -10,7 +11,6 @@ import {
     InputField,
     ButtonAdding,
 } from "./Register.styled";
-import { authOperations } from "redux/auth/auth-operations";
 
 const RegisterPage = () => {
     const dispatch = useDispatch();
@@ -19,8 +19,7 @@ const RegisterPage = () => {
     const [password, setPassword] = useState('');
     // const [isPassword, setIsPassword] = useState(true);
 
-    const handleInputChange = (event) => {
-        const { name, value } = event.currentTarget;
+    const handleInputChange = ({ target: { name, value }}) => {
         switch (name) {
             case 'name':
                 return setName(value);
@@ -34,7 +33,7 @@ const RegisterPage = () => {
         }
     }
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
         
         dispatch(authOperations.register({ name, email, password }));
@@ -42,10 +41,8 @@ const RegisterPage = () => {
         console.log(name, email, password);
         
         // try {
-        //     setIsLoading(true);
         //     await publicApi.post('/users/signup', values);
         //     await dispatch(authLoginThunk({ email: values.email, password: values.password })).unwrap();
-        //     setIsLoading(false);
         //     toast.success('Congratulate! You have just become the owner of Phonebook!');
         // } catch (error) {
         //     console.log(error);
