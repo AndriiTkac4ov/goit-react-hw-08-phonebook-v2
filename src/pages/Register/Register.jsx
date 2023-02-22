@@ -1,8 +1,7 @@
 import { useState } from "react";
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 // import { authLoginThunk } from "redux/auth/auth.thunk";
 // import { toast } from "react-toastify";
-import Loader from "components/Loader/Loader";
 import {
     RegisterGroup,
     RegisterTitle,
@@ -11,29 +10,37 @@ import {
     InputField,
     ButtonAdding,
 } from "./Register.styled";
-
-const initialState = {
-    name: '',
-    email: '',
-    password: '',
-}
+import { authOperations } from "redux/auth/auth-operations";
 
 const RegisterPage = () => {
-    // const dispatch = useDispatch();
-    const [isLoading, setIsLoading] = useState(false);
-    const [values, setValues] = useState(initialState);
+    const dispatch = useDispatch();
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     // const [isPassword, setIsPassword] = useState(true);
 
     const handleInputChange = (event) => {
         const { name, value } = event.currentTarget;
-        setValues(prev => ({...prev, [name]: value}))
+        switch (name) {
+            case 'name':
+                return setName(value);
+            case 'email':
+                return setEmail(value);
+            case 'password':
+                return setPassword(value);
+            
+            default:
+                return;
+        }
     }
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        
+        dispatch(authOperations.register({ name, email, password }));
 
-        console.log(values);
-
+        console.log(name, email, password);
+        
         // try {
         //     setIsLoading(true);
         //     await publicApi.post('/users/signup', values);
@@ -45,13 +52,13 @@ const RegisterPage = () => {
         //     toast.error('Houston! We have a problem!');
         // }
 
-        setValues(initialState);
+        setName('');
+        setEmail('');
+        setPassword('');
     }
 
     return (
         <RegisterGroup>
-            {isLoading && <Loader />}
-
             <RegisterTitle>Please Sign in Your Phonebook</RegisterTitle>
 
             <Form onSubmit={handleSubmit}>
@@ -65,7 +72,7 @@ const RegisterPage = () => {
                         required
                         autoComplete="off"
                         placeholder="Name"
-                        value={values.name}
+                        value={name}
                         onChange={handleInputChange}
                     />
                 </LabelField>
@@ -78,7 +85,7 @@ const RegisterPage = () => {
                         required
                         autoComplete="off"
                         placeholder="name@email.com"
-                        value={values.email}
+                        value={email}
                         onChange={handleInputChange}
                     />
                 </LabelField>
@@ -92,7 +99,7 @@ const RegisterPage = () => {
                         required
                         autoComplete="off"
                         placeholder="Name123456"
-                        value={values.password}
+                        value={password}
                         onChange={handleInputChange}
                     />
                 </LabelField>
