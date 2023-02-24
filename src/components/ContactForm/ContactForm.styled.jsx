@@ -19,7 +19,7 @@ export const LabelField = styled.label`
 `;
 
 export const InputField = styled.input`
-    padding: 16px;
+    padding: 12px;
     font-size: ${props => props.theme.spacing(2)};
     line-height: 1.2;
     border: 1px solid chocolate;

@@ -36,8 +36,6 @@ const LoginPage = () => {
 
         dispatch(authOperations.logIn({ email, password }));
 
-        console.log(email, password);
-
         // try {
         //     await dispatch(authLoginThunk(values)).unwrap();
         //     toast.success('Finally! We missed you.');

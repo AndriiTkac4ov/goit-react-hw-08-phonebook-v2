@@ -11,7 +11,7 @@ export const ProfileEmail = styled.p`
     font-size: ${props => props.theme.spacing(2.5)};
     font-weight: 700;
     line-height: 1.5;
-    color: honeydew;
+    color: bisque;
 `;
 
 export const LogOutButton = styled.button`

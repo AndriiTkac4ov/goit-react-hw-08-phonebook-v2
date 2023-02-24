@@ -37,8 +37,6 @@ const RegisterPage = () => {
         event.preventDefault();
         
         dispatch(authOperations.register({ name, email, password }));
-
-        console.log(name, email, password);
         
         // try {
         //     await publicApi.post('/users/signup', values);

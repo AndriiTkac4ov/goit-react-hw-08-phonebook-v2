@@ -33,11 +33,25 @@ const authSlice = createSlice({
                 state.token = payload.token;
                 state.isLoggedIn = true;
             })
+
             //LogOut
             .addCase(authOperations.logOut.fulfilled, (state, { payload }) => {
                 state.user = { name: null, email: null };
                 state.token = null;
                 state.isLoggedIn = false;
+            })
+
+            //Refresh
+            .addCase(authOperations.refreshCurrentUser.pending, state => {
+                state.isRefreshing = true;
+            })
+            .addCase(authOperations.refreshCurrentUser.fulfilled, (state, { payload }) => {
+                state.user = payload;
+                state.isLoggedIn = true;
+                state.isRefreshing = false;
+            })
+            .addCase(authOperations.refreshCurrentUser.rejected, state => {
+                state.isRefreshing = false;
             })
     },
 });
