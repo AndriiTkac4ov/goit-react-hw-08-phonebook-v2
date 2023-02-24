@@ -10,7 +10,7 @@ import {
 } from './Navigation.styled';
 
 export const Navigation = () => {
-    const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+    const isLoggedIn = useSelector(authSelectors.selectIsLoggedIn);
 
     // const dispatch = useDispatch();
 

@@ -8,9 +8,9 @@ import {
     LogOutButton,
 } from './UserMenu.styled';
 
-const UserMenu = ({ mail }) => {
+const UserMenu = () => {
     const dispatch = useDispatch();
-    const name = useSelector(authSelectors.getUsername);
+    const userEmail = useSelector(authSelectors.selectUserEmail);
 
     // const handleLogOut = async () => {
     //     try {
@@ -24,7 +24,7 @@ const UserMenu = ({ mail }) => {
 
     return (
         <ProfileMenu>
-            <ProfileEmail>{name}</ProfileEmail>
+            <ProfileEmail>{userEmail}</ProfileEmail>
             <LogOutButton type="button" onClick={() => dispatch(authOperations.logOut())}>Log out</LogOutButton>
         </ProfileMenu>
     )

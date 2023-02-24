@@ -15,6 +15,7 @@ const contactsSlice = createSlice({
   // Об'єкт редюсерів
   extraReducers: builder => {
     builder
+      // fetchAll
       .addCase(fetchContacts.pending, state => {
         state.isLoading = true;
         state.error = null;
@@ -27,6 +28,7 @@ const contactsSlice = createSlice({
         state.isLoading = false;
         state.error = action.payload;
       })
+      // addContact
       .addCase(addContact.pending, state => {
         state.isLoading = true;
         state.error = null;
@@ -39,6 +41,7 @@ const contactsSlice = createSlice({
         state.isLoading = false;
         state.error = action.payload;
       })
+      // deleteContact
       .addCase(deleteContact.pending, state => {
         state.isLoading = true;
         state.error = null;
