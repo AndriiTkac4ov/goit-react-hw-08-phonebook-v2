@@ -1,17 +1,18 @@
 {
   "files": {
     "main.css": "/goit-react-hw-08-phonebook-v2/static/css/main.c9969133.css",
-    "main.js": "/goit-react-hw-08-phonebook-v2/static/js/main.6688c124.js",
-    "static/js/544.c6f54609.chunk.js": "/goit-react-hw-08-phonebook-v2/static/js/544.c6f54609.chunk.js",
+    "main.js": "/goit-react-hw-08-phonebook-v2/static/js/main.de439c04.js",
+    "static/js/485.5b446d98.chunk.js": "/goit-react-hw-08-phonebook-v2/static/js/485.5b446d98.chunk.js",
     "static/js/902.07685170.chunk.js": "/goit-react-hw-08-phonebook-v2/static/js/902.07685170.chunk.js",
     "static/js/172.73f80693.chunk.js": "/goit-react-hw-08-phonebook-v2/static/js/172.73f80693.chunk.js",
     "static/js/813.6597500c.chunk.js": "/goit-react-hw-08-phonebook-v2/static/js/813.6597500c.chunk.js",
     "static/js/72.d1e709f9.chunk.js": "/goit-react-hw-08-phonebook-v2/static/js/72.d1e709f9.chunk.js",
     "static/media/go-away-from-this-page.gif": "/goit-react-hw-08-phonebook-v2/static/media/go-away-from-this-page.2ceefed9e9b1d6506b31.gif",
+    "static/media/background-for-home-page.jpg": "/goit-react-hw-08-phonebook-v2/static/media/background-for-home-page.d1fe0abd1bcef9373c5a.jpg",
     "index.html": "/goit-react-hw-08-phonebook-v2/index.html",
     "main.c9969133.css.map": "/goit-react-hw-08-phonebook-v2/static/css/main.c9969133.css.map",
-    "main.6688c124.js.map": "/goit-react-hw-08-phonebook-v2/static/js/main.6688c124.js.map",
-    "544.c6f54609.chunk.js.map": "/goit-react-hw-08-phonebook-v2/static/js/544.c6f54609.chunk.js.map",
+    "main.de439c04.js.map": "/goit-react-hw-08-phonebook-v2/static/js/main.de439c04.js.map",
+    "485.5b446d98.chunk.js.map": "/goit-react-hw-08-phonebook-v2/static/js/485.5b446d98.chunk.js.map",
     "902.07685170.chunk.js.map": "/goit-react-hw-08-phonebook-v2/static/js/902.07685170.chunk.js.map",
     "172.73f80693.chunk.js.map": "/goit-react-hw-08-phonebook-v2/static/js/172.73f80693.chunk.js.map",
     "813.6597500c.chunk.js.map": "/goit-react-hw-08-phonebook-v2/static/js/813.6597500c.chunk.js.map",
@@ -19,6 +20,6 @@
   },
   "entrypoints": [
     "static/css/main.c9969133.css",
-    "static/js/main.6688c124.js"
+    "static/js/main.de439c04.js"
   ]
 }
