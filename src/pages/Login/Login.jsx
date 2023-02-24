@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { authOperations } from "redux/auth/auth-operations";
-// import { selectAuthStatus } from "redux/auth/auth.selector";
-// import { toast } from "react-toastify";
-// import Loader from "components/Loader/Loader";
 import {
     RegisterGroup,
     RegisterTitle,
@@ -35,14 +32,6 @@ const LoginPage = () => {
         event.preventDefault();
 
         dispatch(authOperations.logIn({ email, password }));
-
-        // try {
-        //     await dispatch(authLoginThunk(values)).unwrap();
-        //     toast.success('Finally! We missed you.');
-        // } catch (error) {
-        //     console.log(error);
-        //     toast.error('Do not hurry! Something is wrong with your email or password.');
-        // }
 
         setEmail('');
         setPassword('');

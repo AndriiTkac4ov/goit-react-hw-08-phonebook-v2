@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { authOperations } from "redux/auth/auth-operations";
-// import { authLoginThunk } from "redux/auth/auth.thunk";
-// import { toast } from "react-toastify";
 import {
     RegisterGroup,
     RegisterTitle,
@@ -37,15 +35,6 @@ const RegisterPage = () => {
         event.preventDefault();
         
         dispatch(authOperations.register({ name, email, password }));
-        
-        // try {
-        //     await publicApi.post('/users/signup', values);
-        //     await dispatch(authLoginThunk({ email: values.email, password: values.password })).unwrap();
-        //     toast.success('Congratulate! You have just become the owner of Phonebook!');
-        // } catch (error) {
-        //     console.log(error);
-        //     toast.error('Houston! We have a problem!');
-        // }
 
         setName('');
         setEmail('');
