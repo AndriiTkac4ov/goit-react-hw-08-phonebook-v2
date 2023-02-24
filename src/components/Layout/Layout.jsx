@@ -1,5 +1,6 @@
 import { PhonebookHeader } from './Layout.styled';
 import { Navigation } from '../Navigation/Navigation';
+import { Footer } from '../Footer/Footer';
 import { Outlet } from 'react-router-dom';
 import { Suspense } from "react";
 import { ToastContainer } from 'react-toastify';
@@ -17,6 +18,7 @@ export const Layout = () => {
                     <Outlet />
                 </Suspense>
             </main>
+            <Footer />
             <ToastContainer />
         </>
     )

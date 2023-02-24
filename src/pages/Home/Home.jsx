@@ -1,10 +1,21 @@
+import {
+    HomeSection,
+    HomePageTitle,
+    HomePageText,
+    HomePageLink,
+} from './Home.styled';
+
 const HomePage = () => {
     return (
-        <>
-            <p style={{textAlign: "center"}}>Wellcome to Your Phonebook!!!</p>
-            <p style={{textAlign: "center"}}>Don't hesitate - register!</p>
-            <p style={{textAlign: "center"}}>Your contacts wait for you - log in!</p>
-        </>
+        <HomeSection>
+            <HomePageTitle>Wellcome! Save your contacts to Phonebook!</HomePageTitle>
+            <HomePageText>Don't hesitate -
+                <HomePageLink to={'/register'}> register!</HomePageLink>
+            </HomePageText>
+            <HomePageText>Your contacts wait for you -
+                <HomePageLink to={'/login'}> log in!</HomePageLink>
+            </HomePageText>
+        </HomeSection>
     )
 }
 
