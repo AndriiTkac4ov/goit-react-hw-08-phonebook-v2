@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { RiDeleteBin6Line } from "react-icons/ri";
 
 export const ContactsItem = styled.li`
     display: flex;
@@ -7,7 +8,7 @@ export const ContactsItem = styled.li`
 
     &:not(:last-child){
         margin-bottom: ${props => props.theme.spacing(1)};
-    }
+    };
 `;
 
 export const ContactName = styled.p`
@@ -17,22 +18,46 @@ export const ContactName = styled.p`
 `;
 
 export const ButtonDeleting = styled.button`
-    padding: 4px 24px;
-    font-size: ${props => props.theme.spacing(2)};
-    font-weight: 500;
-    line-height: 1.2;
-    border: 1px solid chocolate;
-    border-radius: ${props => props.theme.spacing(1)};
+    display: none;
+    
+    @media screen and (min-width: 768px) {
+        & {
+            display: block;
+            padding: 4px 24px;
+            font-size: ${props => props.theme.spacing(2)};
+            font-weight: 500;
+            line-height: 1.2;
+            border: 1px solid chocolate;
+            border-radius: ${props => props.theme.spacing(1)};
+            cursor: pointer;
+            background: burlywood;
+            color: honeydew;
+            transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out, border-color 0.25s ease-in-out, transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+            &:hover,
+            &:focus {
+                background: chocolate;
+                color: springgreen;
+                border: 1px solid springgreen;
+                transform: scale(1.1);
+            }
+        };
+    };
+`;
+
+export const DeleteIcon = styled(RiDeleteBin6Line)`
     cursor: pointer;
-    background: burlywood;
-    color: honeydew;
-    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out, border-color 0.25s ease-in-out, transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color: chocolate;
+    transition: color 0.25s ease-in-out;
 
     &:hover,
     &:focus {
-        background: chocolate;
-        color: springgreen;
-        border: 1px solid springgreen;
-        transform: scale(1.1);
-    }
+        color: darkslateblue;
+    };
+
+    @media screen and (min-width: 768px) {
+        & {
+            display: none;
+        };
+    };
 `;

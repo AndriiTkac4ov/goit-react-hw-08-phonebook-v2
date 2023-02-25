@@ -5,6 +5,7 @@ import {
     ProfileMenu,
     ProfileEmail,
     LogOutButton,
+    LogOutIcon,
 } from './UserMenu.styled';
 
 const UserMenu = () => {
@@ -14,6 +15,7 @@ const UserMenu = () => {
     return (
         <ProfileMenu>
             <ProfileEmail>{userEmail}</ProfileEmail>
+            <LogOutIcon size={32} onClick={() => dispatch(authOperations.logOut())}>Log out</LogOutIcon>
             <LogOutButton type="button" onClick={() => dispatch(authOperations.logOut())}>Log out</LogOutButton>
         </ProfileMenu>
     )
