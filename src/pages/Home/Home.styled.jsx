@@ -38,6 +38,12 @@ export const HomePageText = styled.p`
 `;
 
 export const HomePageLink = styled(Link)`
-    color: springgreen;
+    color: bisque;
     text-underline-offset: 6px;
+
+    &:hover,
+    &:focus {
+        color: springgreen;
+        transform: scale(1.15);
+    }
 `;

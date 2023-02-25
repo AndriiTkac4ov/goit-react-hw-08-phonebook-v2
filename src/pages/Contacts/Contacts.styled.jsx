@@ -2,10 +2,16 @@ import styled from 'styled-components';
 
 export const ContactsGroup = styled.div`
     margin: 0;
-    padding: 16px 40px;
+    padding: 16px 16px;
     text-align: center;
     background: lavender;
     color: chocolate;
+
+    @media screen and (min-width: 768px) {
+        & {
+            padding: 16px 40px;
+        };
+    }
 `;
 
 export const AppTitle = styled.h1`
