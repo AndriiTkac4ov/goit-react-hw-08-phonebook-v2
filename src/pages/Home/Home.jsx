@@ -7,15 +7,17 @@ import {
 
 const HomePage = () => {
     return (
-        <HomeSection>
-            <HomePageTitle>Wellcome! Save your contacts to Phonebook!</HomePageTitle>
-            <HomePageText>Don't hesitate -
-                <HomePageLink to={'/register'}> register!</HomePageLink>
-            </HomePageText>
-            <HomePageText>Your contacts wait for you -
-                <HomePageLink to={'/login'}> log in!</HomePageLink>
-            </HomePageText>
-        </HomeSection>
+        <main>
+            <HomeSection>
+                <HomePageTitle>Wellcome! Save your contacts to Phonebook!</HomePageTitle>
+                <HomePageText>Don't hesitate -
+                    <HomePageLink to={'/register'}> register!</HomePageLink>
+                </HomePageText>
+                <HomePageText>Your contacts wait for you -
+                    <HomePageLink to={'/login'}> log in!</HomePageLink>
+                </HomePageText>
+            </HomeSection>
+        </main>
     )
 }
 

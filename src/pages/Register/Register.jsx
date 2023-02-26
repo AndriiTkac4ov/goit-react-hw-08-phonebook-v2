@@ -42,56 +42,58 @@ const RegisterPage = () => {
     }
 
     return (
-        <RegisterGroup>
-            <RegisterTitle>Please Sign in Your Phonebook</RegisterTitle>
+        <main style={{height: "100%"}}>
+            <RegisterGroup>
+                <RegisterTitle>Please Sign in Your Phonebook</RegisterTitle>
 
-            <Form onSubmit={handleSubmit}>
-                <LabelField>
-                    Name
-                    <InputField
-                        type="text"
-                        name="name"
-                        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-                        title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-                        required
-                        autoComplete="off"
-                        placeholder="Name"
-                        value={name}
-                        onChange={handleInputChange}
-                    />
-                </LabelField>
+                <Form onSubmit={handleSubmit}>
+                    <LabelField>
+                        Name
+                        <InputField
+                            type="text"
+                            name="name"
+                            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+                            required
+                            autoComplete="off"
+                            placeholder="Name"
+                            value={name}
+                            onChange={handleInputChange}
+                        />
+                    </LabelField>
 
-                <LabelField>
-                    Email
-                    <InputField
-                        type="email"
-                        name="email"
-                        required
-                        autoComplete="off"
-                        placeholder="name@email.com"
-                        value={email}
-                        onChange={handleInputChange}
-                    />
-                </LabelField>
+                    <LabelField>
+                        Email
+                        <InputField
+                            type="email"
+                            name="email"
+                            required
+                            autoComplete="off"
+                            placeholder="name@email.com"
+                            value={email}
+                            onChange={handleInputChange}
+                        />
+                    </LabelField>
 
-                <LabelField>
-                    Password
-                    <InputField
-                        // type={isPassword ? "password" : "text"}
-                        type="password"
-                        name="password"
-                        required
-                        autoComplete="off"
-                        placeholder="Name123456"
-                        value={password}
-                        onChange={handleInputChange}
-                    />
-                </LabelField>
+                    <LabelField>
+                        Password
+                        <InputField
+                            // type={isPassword ? "password" : "text"}
+                            type="password"
+                            name="password"
+                            required
+                            autoComplete="off"
+                            placeholder="Name123456"
+                            value={password}
+                            onChange={handleInputChange}
+                        />
+                    </LabelField>
 
-                {/* <ButtonAdding type="button" onClick={() => setIsPassword(prev => !prev)}>Show Password</ButtonAdding> */}
-                <ButtonAdding type="submit">Sign In</ButtonAdding>
-            </Form>
-        </RegisterGroup>
+                    {/* <ButtonAdding type="button" onClick={() => setIsPassword(prev => !prev)}>Show Password</ButtonAdding> */}
+                    <ButtonAdding type="submit">Sign In</ButtonAdding>
+                </Form>
+            </RegisterGroup>
+        </main>
     )
 }
 

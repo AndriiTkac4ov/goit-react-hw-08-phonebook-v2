@@ -38,41 +38,43 @@ const LoginPage = () => {
     }
 
     return (
-        <RegisterGroup>
-            <RegisterTitle>Please Log in Your Phonebook</RegisterTitle>
+        <main style={{height: "100%"}}>
+            <RegisterGroup>
+                <RegisterTitle>Please Log in Your Phonebook</RegisterTitle>
 
-            <Form onSubmit={handleSubmit}>
-                <LabelField>
-                    Email
-                    <InputField
-                        type="email"
-                        name="email"
-                        required
-                        autoComplete="on"
-                        placeholder="name@email.com"
-                        value={email}
-                        onChange={handleInputChange}
-                    />
-                </LabelField>
+                <Form onSubmit={handleSubmit}>
+                    <LabelField>
+                        Email
+                        <InputField
+                            type="email"
+                            name="email"
+                            required
+                            autoComplete="on"
+                            placeholder="name@email.com"
+                            value={email}
+                            onChange={handleInputChange}
+                        />
+                    </LabelField>
 
-                <LabelField>
-                    Password
-                    <InputField
-                        // type={isPassword ? "password" : "text"}
-                        type="password"
-                        name="password"
-                        required
-                        autoComplete="off"
-                        placeholder="Name123456"
-                        value={password}
-                        onChange={handleInputChange}
-                    />
-                </LabelField>
+                    <LabelField>
+                        Password
+                        <InputField
+                            // type={isPassword ? "password" : "text"}
+                            type="password"
+                            name="password"
+                            required
+                            autoComplete="off"
+                            placeholder="Name123456"
+                            value={password}
+                            onChange={handleInputChange}
+                        />
+                    </LabelField>
 
-                {/* <ButtonAdding type="button" onClick={() => setIsPassword(prev => !prev)}>Show Password</ButtonAdding> */}
-                <ButtonAdding type="submit">Log in</ButtonAdding>
-            </Form>
-        </RegisterGroup>
+                    {/* <ButtonAdding type="button" onClick={() => setIsPassword(prev => !prev)}>Show Password</ButtonAdding> */}
+                    <ButtonAdding type="submit">Log in</ButtonAdding>
+                </Form>
+            </RegisterGroup>
+        </main>
     )
 }
 

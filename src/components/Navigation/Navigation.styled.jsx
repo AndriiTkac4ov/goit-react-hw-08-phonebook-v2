@@ -1,6 +1,18 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+export const HeaderAuthNav = styled.nav`
+    /* display: block; */
+
+    /* @media screen and (min-width: 768px) {
+        & {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        };
+    }; */
+`;
+
 export const HeaderNav = styled.nav`
     display: flex;
     justify-content: space-between;

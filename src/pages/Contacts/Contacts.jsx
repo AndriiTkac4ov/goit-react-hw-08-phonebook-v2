@@ -14,14 +14,16 @@ const ContactsPage = () => {
     const isLoading = useSelector(selectIsLoading);
 
     return (
-        <ContactsGroup>
-            <AppTitle>Phonebook</AppTitle>
-            <ContactForm />
-            <ContactsTitle>Contacts</ContactsTitle>
-            <Filter />
-            {isLoading && <Loader />}
-            <ContactList />
-        </ContactsGroup>
+        <main style={{height: "100%"}}>
+            <ContactsGroup>
+                <AppTitle>Phonebook</AppTitle>
+                <ContactForm />
+                <ContactsTitle>Contacts</ContactsTitle>
+                <Filter />
+                {isLoading && <Loader />}
+                <ContactList />
+            </ContactsGroup>
+        </main>
     )
 }
 

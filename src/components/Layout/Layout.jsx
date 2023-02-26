@@ -1,5 +1,4 @@
-import { PhonebookHeader } from './Layout.styled';
-import { Navigation } from '../Navigation/Navigation';
+import { Header } from '../Header/Header';
 import { Footer } from '../Footer/Footer';
 import { Outlet } from 'react-router-dom';
 import { Suspense } from "react";
@@ -9,17 +8,13 @@ import Loader from '../Loader/Loader';
 
 export const Layout = () => {
     return (
-        <>
-            <PhonebookHeader>
-                <Navigation />
-            </PhonebookHeader>
-            <main>
-                <Suspense fallback={<Loader />}>
-                    <Outlet />
-                </Suspense>
-            </main>
+        <div style={{height: "100vh"}}>
+            <Header />
+            <Suspense fallback={<Loader />}>
+                <Outlet />
+            </Suspense>
             <Footer />
             <ToastContainer />
-        </>
+        </div>
     )
 }

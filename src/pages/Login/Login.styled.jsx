@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-export const RegisterGroup = styled.div`
+export const RegisterGroup = styled.section`
+    min-height: 100%;
     margin: 0;
     padding: 16px 16px;
     text-align: center;
